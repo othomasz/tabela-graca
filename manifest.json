@@ -1,7 +1,7 @@
 {
   "name": "Tabela da Graça",
   "short_name": "TabGraça",
-  "start_url": "/",
+  "start_url": "/tabela-graca",
   "display": "standalone",
   "background_color": "#785C47",
   "theme_color": "#785C47",
