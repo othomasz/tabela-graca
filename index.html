@@ -2,7 +2,8 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Tabela com Checkboxes</title>
+  <title>Tabela da Graça ;)</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <style>
     table {
       border-collapse: collapse;
@@ -16,13 +17,18 @@
     th {
       background-color: #f0f0f0;
     }
-    input[type="checkbox"] {
-      transform: scale(1.2);
-    }
+	
+	.visual-checkbox {
+	  transform: scale(1.2);
+	  pointer-events: none;  /* impede clique */
+	  cursor: default;       /* cursor normal */
+	  accent-color: #3b82f6; /* cor azul (ou outra) */
+	}
+
   </style>
 </head>
 <body>
-  <h1>Planilha com Checkboxes</h1>
+  <h1>Tabela da Graça</h1>
   <table id="tabela"></table>
 
   <script>
@@ -41,13 +47,13 @@
 
             // Interpreta valores como booleanos para checkbox
             const valor = celula.trim().toLowerCase();
-            const ehBooleano = valor === 'true' || valor === 'false' || valor === '1' || valor === '0' || valor === 'sim' || valor === 'não';
+            const ehBooleano = valor === 'true' || valor === 'false' || valor === 'sim' || valor === 'não';
 
             if (i > 0 && ehBooleano) {
               const checkbox = document.createElement('input');
               checkbox.type = 'checkbox';
-              checkbox.disabled = true; // apenas visual
-              checkbox.checked = valor === 'true' || valor === '1' || valor === 'sim';
+              checkbox.classList.add('visual-checkbox'); // apenas visual
+              checkbox.checked = valor === 'true' || valor === 'sim';
               el.appendChild(checkbox);
             } else {
               el.textContent = celula;
