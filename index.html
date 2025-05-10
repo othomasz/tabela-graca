@@ -8,19 +8,45 @@
   <link rel="apple-touch-icon" href="images/icon-192.png">
   <meta name="theme-color" content="#785C47">
   <style>
+   body{
+        font-family: "Roboto", sans-serif;
+        padding: 16px;
+        background-color: #FEFAE0
+      }
+      
     table {
+      border: 1px solid #283618;
       border-collapse: collapse;
       width: 100%;
     }
+      
     th, td {
-      border: 1px solid #ccc;
       padding: 8px;
+        
       text-align: center;
     }
+      
     th {
-      background-color: #f0f0f0;
+      background-color: #606c38;
+      color: white;
+      padding: 12px;
     }
-	
+      
+    tr:nth-child(even) {
+        background-color: #dda15e;
+        color: #FEFAE0
+      }
+
+    tr:nth-child(odd) {
+        background-color: #FEFAE0;
+        color: #606c38
+      }
+    
+    h1, a{
+      color: #606c38;
+      }
+
+      
 	.visual-checkbox {
 	  transform: scale(1.2);
 	  pointer-events: none;  /* impede clique */
@@ -33,7 +59,7 @@
 <body>
   <h1>Tabela da Graça</h1>
   <table id="tabela"></table>
-
+  <p><a href="https://othomasz.github.io/">Página Inicial</a></p>
   <script>
     const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSLBYRao13AJeVkpTtyj-lwqefuQIuVLVchzbERRobSrZ1AwpHh7Cp_KA-QA-f0dNIU1MfV5emaUZua/pub?gid=0&single=true&output=csv'; // substitua pelo seu link
 
