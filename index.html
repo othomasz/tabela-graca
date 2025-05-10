@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Tabela da Graça ;)</title>
+  <title>Tabela com Checkboxes</title>
   <style>
     table {
       border-collapse: collapse;
@@ -11,15 +11,18 @@
     th, td {
       border: 1px solid #ccc;
       padding: 8px;
-      text-align: left;
+      text-align: center;
     }
     th {
       background-color: #f0f0f0;
     }
+    input[type="checkbox"] {
+      transform: scale(1.2);
+    }
   </style>
 </head>
 <body>
-  <h1>Tabela da Graça</h1>
+  <h1>Planilha com Checkboxes</h1>
   <table id="tabela"></table>
 
   <script>
@@ -57,6 +60,5 @@
       })
       .catch(error => console.error('Erro ao carregar planilha:', error));
   </script>
-
 </body>
 </html>
