@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabela Automática do Google Planilhas</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dados da Planilha</h1>
+  <table id="tabela"></table>
+
+  <script>
+    const url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSLBYRao13AJeVkpTtyj-lwqefuQIuVLVchzbERRobSrZ1AwpHh7Cp_KA-QA-f0dNIU1MfV5emaUZua/pub?gid=0&single=true&output=csv'; // substitua pelo seu link
+
+    fetch(url)
+      .then(response => response.text())
+      .then(data => {
+        const linhas = data.split('\n').map(l => l.split(','));
+        const tabela = document.getElementById('tabela');
+        
+        linhas.forEach((linha, i) => {
+          const tr = document.createElement('tr');
+          linha.forEach(celula => {
+            const el = document.createElement(i === 0 ? 'th' : 'td');
+            el.textContent = celula;
+            tr.appendChild(el);
+          });
+          tabela.appendChild(tr);
+        });
+      })
+      .catch(error => console.error('Erro ao carregar planilha:', error));
+  </script>
+</body>
+</html>
